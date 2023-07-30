@@ -6,11 +6,9 @@ This is a simple script to upload files to Nextcloud using the command line.
 
 [https://yoo.lat/blog](https://yoo.lat/blog)
 
-## 🪟 Windows
-
-## 🐧 Linux
-
-## 🐍 Python
+- 🪟 Windows
+- 🐧 Linux
+- 🐍 Python
 
 ## ✅ TODO
 
