@@ -8,7 +8,7 @@ REM set "curl_executable=C:\ProgramData\chocolatey\bin\curl.exe"
 
 REM Check if the number of arguments is not equal to 2
 if "%~2" == "" (
-    echo ERROR: Es necesario un nombre de archivo y una IP.
+    echo ERROR: Es necesario un nombre de archivo, un username y una IP.
     exit /b 1
 )
 

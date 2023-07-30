@@ -17,5 +17,5 @@ This is a simple script to upload files to Nextcloud using the command line.
 - [ ] Add support for folders
 - [ ] Add support for changing the file name
 - [ ] On Windows, add support for choosing verbose or not
-- [ ] Add colors to Python script
+- [x] Add colors to Python script
 - [ ] On Windows, add option to load a custom path for CURL
