@@ -44,3 +44,24 @@ if __name__ == "__main__":
 	username = url_org.split('/')[-1]
 
 	upload_file_to_url(url, file_path, username)
+
+
+"""
+- TODO -
+
+- Check if file is dir
+- Go through all the files in the dir and upload them
+
+from pathlib import Path
+
+directory_path = Path('/path/to/directory')
+
+# Check if the directory exists
+if directory_path.is_dir():
+    # Use the `iterdir()` method to get an iterator of the directory's contents
+    contents = list(directory_path.iterdir())
+    print("Contents of the directory:", contents)
+else:
+    print("The specified directory does not exist.")
+
+"""
