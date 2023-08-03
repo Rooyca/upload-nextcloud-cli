@@ -6,19 +6,17 @@ REM change size of screen and color to green
 mode con: cols=100 lines=30
 color 0a
 
-REM set "curl_executable=C:\ProgramData\chocolatey\bin\curl.exe"
-
 REM Variables
 set "file_path="
 set "username="
 set "ip="
 for %%A in ("%file_path%") do set "file_name=%%~nxA"
 
-for /F "tokens=2 delims=: " %%A in (ip.txt) do (
+for /F "tokens=2 delims=: " %%A in (.ip) do (
     set "ip=%%A"
 )
 
-for /F "tokens=2 delims=: " %%A in (user.txt) do (
+for /F "tokens=2 delims=: " %%A in (.user) do (
     set "username=%%A"
 )
 
@@ -33,8 +31,8 @@ if NOT "%~4" == "" (
 
 :menu
 cls
-echo ip: %ip% > ip.txt
-echo us: %username% > user.txt
+echo ip: %ip% > .ip
+echo us: %username% > .user
 echo.
 echo =================================
 echo  Archivo: %file_path%            
@@ -46,6 +44,7 @@ echo.
 echo Por favor actualice toda la informacion necesaria
 echo.
 echo --------------------------------
+echo 0. Usar CURL con Chocolatey
 echo 1. Directorio del archivo
 echo 2. Nombre de usuario
 echo 3. IP 
@@ -58,7 +57,13 @@ echo --------------------------------
 set /p choice=Ingrese el numero de la opcion deseada: 
 echo.
 
-if "%choice%"=="1" (
+if "%choice%"=="0" (
+    set "curl_executable=C:\ProgramData\chocolatey\bin\curl.exe"
+    set "url=https://%ip%/public.php/webdav/%file_name%"
+    start /wait %curl_executable% -k -v -T "%file_path%" -u "%username%:" -H "X-Requested-With: XMLHttpRequest" "%url%"
+    pause
+    goto menu
+) else if "%choice%"=="1" (
     set /p file_path=Ingrese el directorio del archivo: 
     pause
     goto menu
