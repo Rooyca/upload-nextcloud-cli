@@ -4,7 +4,7 @@ This is a simple script to upload files to Nextcloud using the command line.
 
 ## 🚊 Usage
 
-[https://yoo.lat/blog](https://yoo.lat/blog)
+[https://yoo.lat/blog](https://bloyca.pages.dev)
 
 - 🪟 Windows
 - 🐧 Linux
