@@ -35,26 +35,25 @@ echo ip: %ip% > .ip
 echo us: %username% > .user
 echo.
 echo =================================
-echo  Archivo: %file_path%            
-echo  Usuario: %username%             
+echo  File: %file_path%            
+echo  User: %username%             
 echo  IP: %ip%                        
-echo  Nombre de archivo: %file_name%  
+echo  Filename: %file_name%  
 echo =================================
 echo.
-echo Por favor actualice toda la informacion necesaria
 echo.
 echo --------------------------------
-echo 0. Usar CURL con Chocolatey
-echo 1. Directorio del archivo
-echo 2. Nombre de usuario
+echo 0. Use CURL with Chocolatey
+echo 1. File path
+echo 2. Username
 echo 3. IP 
-echo 4. Nombre de archivo (OPCIONAL)
+echo 4. Filename (OPTIONAL)
 echo --------------------------------
-echo 5. Subir archivo
-echo 6. Salir
+echo 5. Upload File
+echo 6. Exit
 echo --------------------------------
 
-set /p choice=Ingrese el numero de la opcion deseada: 
+set /p choice=Choose an option: 
 echo.
 
 if "%choice%"=="0" (
@@ -64,32 +63,32 @@ if "%choice%"=="0" (
     pause
     goto menu
 ) else if "%choice%"=="1" (
-    set /p file_path=Ingrese el directorio del archivo: 
+    set /p file_path=Enter file path: 
     pause
     goto menu
 ) else if "%choice%"=="2" (
-    set /p username=Ingrese el nombre de usuario: 
+    set /p username=Enter username: 
     pause
     goto menu
 ) else if "%choice%"=="3" (
-    set /p ip=Ingrese la IP: 
+    set /p ip=Enter IP: 
     pause
     goto menu
 ) else if "%choice%"=="4" (
-    set /p file_name=Ingrese el nombre de archivo: 
+    set /p file_name=Enter filename: 
     pause
     goto menu
 ) else if "%choice%"=="5" (
     if "%file_path%" == "" (
         goto menu
     )
-    echo Subiendo archivo...
+    echo Uploading file...
     goto upload
 ) else if "%choice%"=="6" (
-    echo Saliendo...
+    echo ..Bay, Bay..
     goto exit
 ) else (
-    echo Opcion inválida. Por favor, ingresa un numero válido del 1 al 6.
+    echo Error. Please, enter a number between 1 and 6.
     pause
     goto menu
 )
